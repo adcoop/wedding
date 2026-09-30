@@ -181,6 +181,50 @@
   .btn.ghost { background: transparent; color: var(--ink); border-color: var(--ink); }
   .btn.ghost:hover { background: var(--ink); color: var(--white); }
 
+  /* ---------- Our story: a sideways photo line ---------- */
+  .story { padding-bottom: clamp(3rem, 7vw, 5rem); }
+  .story-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 1.5rem; }
+  .story-head .lede { margin-bottom: 0; }
+  .reel-nav { display: flex; gap: 0.6rem; flex-shrink: 0; }
+  .reel-btn {
+    width: 3rem; height: 3rem; border-radius: 50%; border: 3px solid var(--ink); background: var(--white);
+    font-size: 1.3rem; font-weight: 700; color: var(--ink); cursor: pointer; line-height: 1;
+  }
+  .reel-btn:hover { background: var(--ink); color: var(--white); }
+  .swipe-hint { display: none; margin: 0.6rem 0 0; font-weight: 600; color: var(--red-dark); }
+  @media (max-width: 640px) { .reel-nav { display: none; } .swipe-hint { display: block; } }
+
+  .reel {
+    margin-top: 2.25rem; overflow-x: auto; overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity; scroll-padding-inline: max(1.25rem, calc((100vw - 1100px) / 2));
+    scrollbar-width: thin; scrollbar-color: var(--ink) transparent;
+  }
+  .reel:focus-visible { outline-offset: -3px; }
+  .reel-track {
+    position: relative; display: flex; align-items: stretch; gap: clamp(1.25rem, 3vw, 2.25rem);
+    width: max-content;
+    padding: 0.75rem max(1.25rem, calc((100vw - 1100px) / 2)) 64px;
+  }
+  /* Alicia's and Mairéad's lines, running together under every photo */
+  .reel-track::before, .reel-track::after { content: ""; position: absolute; left: 0; right: 0; height: 8px; }
+  .reel-track::before { bottom: 34px; background: var(--yellow); }
+  .reel-track::after  { bottom: 21px; background: var(--green); }
+  .reel-item { position: relative; margin: 0; scroll-snap-align: start; display: flex; flex-direction: column; }
+  .reel-item::after {
+    content: ""; position: absolute; z-index: 1; left: 50%; bottom: -46px; transform: translateX(-50%);
+    width: 38px; height: 26px; border-radius: 13px; background: var(--white); border: 4px solid var(--ink);
+  }
+  .reel-item:last-child::after { background: var(--red); }
+  .frame {
+    background: var(--white); padding: 8px; border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(34, 30, 31, 0.12);
+    transform: rotate(-1.4deg);
+  }
+  .reel-item:nth-child(even) .frame { transform: rotate(1.2deg); }
+  .reel-item:nth-child(3n) .frame { transform: rotate(-0.6deg); }
+  .frame img { height: clamp(220px, 34vw, 330px); width: auto; max-width: none; border-radius: 4px; }
+  .reel-item figcaption { margin-top: 0.8rem; font-weight: 600; max-width: 16rem; line-height: 1.35; }
+
   /* ---------- Photos: the light tunnel ---------- */
   .night {
     position: relative; overflow: hidden;
@@ -192,8 +236,7 @@
   .night .lede { color: #D6CFDC; }
   .gallery { display: grid; grid-template-columns: repeat(6, 1fr); gap: clamp(1.25rem, 3vw, 2.25rem); margin-top: 2.75rem; }
   .gallery figure { margin: 0; grid-column: span 2; }
-  .gallery figure:nth-child(4) { grid-column: 2 / span 2; }
-  .gallery figure:nth-child(5) { grid-column: 4 / span 2; }
+  .gallery figure.wide img { object-position: 68% 50%; }
   .gallery img {
     width: 100%; aspect-ratio: 3 / 4; object-fit: cover;
     border-radius: 999px 999px 18px 18px;
@@ -203,8 +246,7 @@
   .gallery figcaption { margin-top: 0.8rem; font-weight: 500; color: #EDE7F2; text-align: center; }
   @media (max-width: 700px) {
     .gallery { grid-template-columns: 1fr 1fr; }
-    .gallery figure, .gallery figure:nth-child(4) { grid-column: auto; }
-    .gallery figure:nth-child(5) { grid-column: 1 / -1; width: 60%; justify-self: center; }
+    .gallery figure { grid-column: auto; }
   }
 
   /* ---------- The line ---------- */
@@ -312,7 +354,8 @@
   <div class="wrap">
     <a class="brand" href="#top">Alicia &amp; Mairéad</a>
     <ul>
-      <li><a href="#photos">Photos</a></li>
+      <li><a href="#story">Our story</a></li>
+      <li><a href="#photos">Wedding day</a></li>
       <li><a href="#party">The weekend</a></li>
       <li><a href="#travel">Getting here</a></li>
       <li><a href="#dc">Our DC</a></li>
@@ -379,32 +422,125 @@
 
   <div class="rainbow-rule" aria-hidden="true"></div>
 
+  <!-- OUR STORY: photos are in the order they were taken. To reorder, move a whole <figure> block. -->
+  <section id="story" class="story">
+    <div class="wrap">
+      <div class="story-head">
+        <div>
+          <h2>Our line so far</h2>
+          <p class="lede">It started with a first date at The LINE. Here's where the line went next.</p>
+          <p class="swipe-hint">Swipe to ride along &rarr;</p>
+        </div>
+        <div class="reel-nav">
+          <button class="reel-btn" type="button" data-dir="-1" aria-label="Scroll back">&larr;</button>
+          <button class="reel-btn" type="button" data-dir="1" aria-label="Scroll forward">&rarr;</button>
+        </div>
+      </div>
+    </div>
+    <div class="reel" tabindex="0" aria-label="Photos from our relationship, oldest first. Scroll sideways to see more.">
+      <div class="reel-track">
+          <figure class="reel-item">
+            <div class="frame"><img src="photos/story/frederick.jpg" alt="Alicia and Mairéad in sunglasses by a fountain in Frederick" width="675" height="900" loading="lazy"></div>
+            <figcaption>Frederick, Maryland</figcaption>
+          </figure>
+          <figure class="reel-item">
+            <div class="frame"><img src="photos/story/mermaids.jpg" alt="Alicia and Mairéad showing matching mermaid tattoos on their shoulders" width="675" height="900" loading="lazy"></div>
+            <figcaption>Matching mermaids in P-town</figcaption>
+          </figure>
+          <figure class="reel-item">
+            <div class="frame"><img src="photos/story/ptowndunes.jpg" alt="Alicia and Mairéad on a sand dune under a blue sky" width="900" height="675" loading="lazy"></div>
+            <figcaption>The Provincetown dunes</figcaption>
+          </figure>
+          <figure class="reel-item">
+            <div class="frame"><img src="photos/story/ptown.jpg" alt="A selfie of Alicia and Mairéad in front of a dahlia garden and a shingled house" width="675" height="900" loading="lazy"></div>
+            <figcaption>Dahlias in P-town</figcaption>
+          </figure>
+          <figure class="reel-item">
+            <div class="frame"><img src="photos/story/sperryville.jpg" alt="Alicia and Mairéad in front of a wall covered in spray-painted hearts" width="900" height="675" loading="lazy"></div>
+            <figcaption>The heart wall in Sperryville</figcaption>
+          </figure>
+          <figure class="reel-item">
+            <div class="frame"><img src="photos/story/xmas-party.jpg" alt="Alicia and Mairéad dressed up in front of a sparkly photo-booth backdrop" width="900" height="675" loading="lazy"></div>
+            <figcaption>Holiday party</figcaption>
+          </figure>
+          <figure class="reel-item">
+            <div class="frame"><img src="photos/story/snow.jpg" alt="A selfie of Alicia and Mairéad bundled up on a snowy street" width="900" height="675" loading="lazy"></div>
+            <figcaption>Snow day</figcaption>
+          </figure>
+          <figure class="reel-item">
+            <div class="frame"><img src="photos/story/leomairead.jpg" alt="A close-up of Mairéad cheek to cheek with Leo, an orange cat" width="675" height="900" loading="lazy"></div>
+            <figcaption>Mairéad and Leo</figcaption>
+          </figure>
+          <figure class="reel-item">
+            <div class="frame"><img src="photos/story/lesbian.jpg" alt="Mairéad reading The Lesbian Bar Chronicles in bed with Leo the cat on her chest" width="900" height="675" loading="lazy"></div>
+            <figcaption>Leo helps with the reading</figcaption>
+          </figure>
+          <figure class="reel-item">
+            <div class="frame"><img src="photos/story/leo-mairead2.jpg" alt="Mairéad in sunglasses hugging Leo the cat" width="675" height="900" loading="lazy"></div>
+            <figcaption>Leo, getting a squeeze</figcaption>
+          </figure>
+          <figure class="reel-item">
+            <div class="frame"><img src="photos/story/paris.jpg" alt="A selfie of Alicia and Mairéad under a lit-up Paris Metro sign" width="675" height="900" loading="lazy"></div>
+            <figcaption>The other Metro: Paris</figcaption>
+          </figure>
+          <figure class="reel-item">
+            <div class="frame"><img src="photos/story/engagement.jpg" alt="Alicia and Mairéad on a forest trail, holding up their engagement rings" width="900" height="675" loading="lazy"></div>
+            <figcaption>Engaged!</figcaption>
+          </figure>
+          <figure class="reel-item">
+            <div class="frame"><img src="photos/story/killarney.jpg" alt="Alicia and Mairéad under a huge old tree with Oscar, a small black dog" width="675" height="900" loading="lazy"></div>
+            <figcaption>Killarney, with Oscar</figcaption>
+          </figure>
+          <figure class="reel-item">
+            <div class="frame"><img src="photos/story/oscar.jpg" alt="Oscar, a black terrier in a green harness, looking out at a lake and mountains" width="675" height="900" loading="lazy"></div>
+            <figcaption>Oscar takes in the view</figcaption>
+          </figure>
+          <figure class="reel-item">
+            <div class="frame"><img src="photos/story/skellig.jpg" alt="Alicia and Mairéad by old stone walls on Skellig Michael, with the sea behind them" width="900" height="675" loading="lazy"></div>
+            <figcaption>Skellig Michael</figcaption>
+          </figure>
+          <figure class="reel-item">
+            <div class="frame"><img src="photos/story/titanic.jpg" alt="Alicia and Mairéad doing the Titanic pose on the bow of a model ship" width="675" height="900" loading="lazy"></div>
+            <figcaption>Doing the Titanic</figcaption>
+          </figure>
+          <figure class="reel-item">
+            <div class="frame"><img src="photos/story/brides.jpg" alt="Alicia and Mairéad in Bride to Be sashes under a Two Brides Are Better Than One banner" width="900" height="817" loading="lazy"></div>
+            <figcaption>Two brides are better than one</figcaption>
+          </figure>
+      </div>
+    </div>
+  </section>
+
   <!-- PHOTOS -->
   <section id="photos" class="night">
     <div class="sparkles" data-count="40" data-palette="light" aria-hidden="true"></div>
     <div class="wrap">
       <h2>How it went</h2>
-      <p class="lede">We made it official at the courthouse with bouquets, red shoes, a ride on the Red Line, and a round at the bar. Here's the day.</p>
+      <p class="lede">We made it official at the courthouse with bouquets, red shoes, a ride on the Red Line, a visit to the big blue rooster, and a round at the bar. Here's the day.</p>
       <div class="gallery">
         <figure>
-          <img src="photos/signing.jpg" alt="Alicia and Mairéad on an orange bench, signing the marriage paperwork on a clipboard" width="1200" height="1600" loading="lazy">
-          <figcaption>Signing the paperwork</figcaption>
+          <img src="photos/after.jpg" alt="Alicia and Mairéad in cream dresses under a doorway covered in autumn leaves" width="1200" height="1600" loading="lazy">
+          <figcaption>Getting our bouquets</figcaption>
         </figure>
         <figure>
           <img src="photos/courthouse-stop.jpg" alt="A selfie of Alicia and Mairéad with their bouquets, under a Metro sign pointing to the courthouses" width="1200" height="1599" loading="lazy">
           <figcaption>Our stop: the courthouse exit</figcaption>
         </figure>
         <figure>
-          <img src="photos/after.jpg" alt="Alicia and Mairéad in cream dresses under a doorway covered in autumn leaves" width="1200" height="1600" loading="lazy">
-          <figcaption>Out celebrating afterward</figcaption>
-        </figure>
-        <figure>
-          <img src="photos/bar.jpg" alt="Alicia and Mairéad on bar stools under brass arches, holding their bouquets" width="1200" height="1600" loading="lazy">
-          <figcaption>A toast at the bar</figcaption>
+          <img src="photos/signing.jpg" alt="Alicia and Mairéad on an orange bench, signing the marriage paperwork on a clipboard" width="1200" height="1600" loading="lazy">
+          <figcaption>Signing the paperwork</figcaption>
         </figure>
         <figure>
           <img src="photos/all-lit-up.jpg" alt="A selfie of Alicia and Mairéad against a wall of sparkling lights" width="1200" height="1600" loading="lazy">
           <figcaption>All lit up</figcaption>
+        </figure>
+        <figure class="wide">
+          <img src="photos/rooster.jpg" alt="Alicia and Mairéad with their bouquets in front of a giant blue rooster sculpture on the National Gallery of Art's roof terrace" width="1600" height="1200" loading="lazy">
+          <figcaption>The blue rooster at the National Gallery of Art</figcaption>
+        </figure>
+        <figure>
+          <img src="photos/bar.jpg" alt="Alicia and Mairéad on bar stools under brass arches, holding their bouquets" width="1200" height="1600" loading="lazy">
+          <figcaption>A toast at the bar</figcaption>
         </figure>
       </div>
     </div>
@@ -623,6 +759,15 @@
       if (/^https?:/.test(v)) { el.target = "_blank"; el.rel = "noopener"; }
     });
     if (!WEDDING.draftMode) document.body.classList.remove("draft");
+
+    // Photo line arrows
+    const reel = document.querySelector(".reel");
+    document.querySelectorAll(".reel-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        reel.scrollBy({ left: Number(btn.dataset.dir) * reel.clientWidth * 0.8, behavior: reduce ? "auto" : "smooth" });
+      });
+    });
 
     // Sparkles
     const palettes = {
