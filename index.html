@@ -3,6 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<script>
+  // Password screen: hide the page until the guest has entered the password once
+  try { if (localStorage.getItem("am-wedding-unlocked") !== "yes") document.documentElement.classList.add("locked"); }
+  catch (e) { document.documentElement.classList.add("locked"); }
+</script>
 <title>Alicia &amp; Mairéad got married</title>
 <meta name="description" content="Alicia and Mairéad got married. Now they're throwing a dance party in Washington, DC on March 6, 2027.">
 <meta property="og:title" content="Alicia &amp; Mairéad got married. Now we party.">
@@ -69,7 +75,32 @@
   section { padding: clamp(4rem, 9vw, 7rem) 0; }
   .lede { font-size: 1.2rem; color: var(--muted); max-width: var(--measure); }
 
+  .visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
   body.draft .todo { background: #FFF3A6; box-shadow: 0 0 0 2px #FFF3A6; border-radius: 3px; }
+
+  /* ---------- Password screen ---------- */
+  #gate { display: none; }
+  html.locked body > :not(#gate) { display: none !important; }
+  html.locked #gate {
+    display: flex; min-height: 100vh; min-height: 100dvh; align-items: center; justify-content: center;
+    padding: 2rem 1.25rem; position: relative; overflow: hidden;
+  }
+  #gate::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 8px; background: var(--rainbow); }
+  .gate-card { width: min(28rem, 100%); text-align: center; position: relative; z-index: 1; }
+  .gate-card svg { width: 100%; max-width: 20rem; height: auto; margin: 0 auto 1.5rem; display: block; }
+  .gate-card h1 { font-size: clamp(2.3rem, 9vw, 3.4rem); font-weight: 800; letter-spacing: -0.03em; }
+  .gate-card p { color: var(--muted); margin: 0.9rem 0 1.5rem; font-size: 1.1rem; }
+  .gate-form { display: flex; gap: 0.6rem; flex-wrap: wrap; justify-content: center; }
+  .gate-form input {
+    flex: 1 1 14rem; min-width: 0; padding: 0.85rem 1.1rem; border-radius: 999px;
+    border: 3px solid var(--ink); background: var(--white); color: var(--ink);
+    font: 500 1.05rem var(--body);
+  }
+  .gate-form input:focus-visible { outline: 3px solid var(--red); outline-offset: 2px; }
+  .gate-error { min-height: 1.5em; margin: 0.9rem 0 0; color: var(--red-dark); font-weight: 600; }
+  .gate-form.shake { animation: shake .35s; }
+  @keyframes shake { 25% { transform: translateX(-6px); } 50% { transform: translateX(6px); } 75% { transform: translateX(-3px); } }
+  @media (prefers-reduced-motion: reduce) { .gate-form.shake { animation: none; } }
 
   /* ---------- Nav ---------- */
   .nav {
@@ -350,6 +381,28 @@
 </head>
 <body class="draft">
 
+<div id="gate">
+  <div class="sparkles" data-count="18" data-palette="rainbow" aria-hidden="true"></div>
+  <div class="gate-card">
+    <svg viewBox="0 0 320 120" aria-hidden="true">
+      <path d="M12 30 H110 C150 30 150 54 190 54 H308" fill="none" stroke="var(--yellow)" stroke-width="9" stroke-linecap="round"/>
+      <path d="M12 90 H110 C150 90 150 66 190 66 H308" fill="none" stroke="var(--green)" stroke-width="9" stroke-linecap="round"/>
+      <circle cx="12" cy="30" r="9" fill="#fff" stroke="var(--yellow)" stroke-width="4"/>
+      <circle cx="12" cy="90" r="9" fill="#fff" stroke="var(--green)" stroke-width="4"/>
+      <rect x="228" y="44" width="54" height="32" rx="16" fill="var(--red)" stroke="var(--ink)" stroke-width="4"/>
+    </svg>
+    <h1>Alicia &amp; Mairéad</h1>
+    <p>Enter the password from your invitation to see the party details.</p>
+    <form class="gate-form" id="gate-form" autocomplete="off">
+      <label for="gate-pw" class="visually-hidden">Password</label>
+      <input id="gate-pw" type="password" placeholder="Password" autocapitalize="none" autocorrect="off" spellcheck="false" required>
+      <button class="btn" type="submit">Let me in</button>
+    </form>
+    <p class="gate-error" id="gate-error" role="alert"></p>
+  </div>
+</div>
+
+
 <nav class="nav" aria-label="Main">
   <div class="wrap">
     <a class="brand" href="#top">Alicia &amp; Mairéad</a>
@@ -570,7 +623,9 @@
             <h3>Welcome drinks</h3>
             <p class="where">TBD, Adams Morgan</p>
             <p>Join us for welcome drinks from 8 pm to 10 pm </p>
-            <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=The+LINE+DC+1770+Euclid+St+NW+Washington+DC" target="_blank" rel="noopener">Open in Maps</a>
+            <!-- Maps link hidden until the venue is set. To restore it, remove the comment marks and update the address:
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=VENUE+ADDRESS+Washington+DC" target="_blank" rel="noopener">Open in Maps</a>
+            -->
           </div>
         </li>
         <li class="stop main">
@@ -612,7 +667,7 @@
         </div>
         <div class="block">
           <h3>Getting around</h3>
-          <p>For Saturday, take the Red Line to Dupont Circle, like we did on our wedding day. Toolbox is about a block from the station. For Friday, The LINE is a walk from the Woodley Park Metro. Parking in both neighborhoods is hard to find.</p>
+          <p>For Saturday, take the Red Line to Dupont Circle, like we did on our wedding day. Toolbox is about a block from the station. For Friday, we'll share the exact spot soon. It will be in Adams Morgan, a walk from Dupont Circle or Woodley Park Metro. Parking in both neighborhoods is hard to find.</p>
         </div>
       </div>
 
@@ -759,6 +814,26 @@
       if (/^https?:/.test(v)) { el.target = "_blank"; el.rel = "noopener"; }
     });
     if (!WEDDING.draftMode) document.body.classList.remove("draft");
+
+    // Password screen
+    const PASSWORD = "dancefloor2027";
+    const gateForm = document.getElementById("gate-form");
+    const gateInput = document.getElementById("gate-pw");
+    const gateError = document.getElementById("gate-error");
+    if (document.documentElement.classList.contains("locked")) gateInput.focus();
+    gateForm.addEventListener("submit", e => {
+      e.preventDefault();
+      if (gateInput.value.trim().toLowerCase() === PASSWORD) {
+        try { localStorage.setItem("am-wedding-unlocked", "yes"); } catch (err) {}
+        document.documentElement.classList.remove("locked");
+        const target = location.hash && document.querySelector(location.hash);
+        if (target) target.scrollIntoView(); else window.scrollTo(0, 0);
+      } else {
+        gateError.textContent = "That's not it. Check your invitation and try again.";
+        gateForm.classList.remove("shake"); void gateForm.offsetWidth; gateForm.classList.add("shake");
+        gateInput.select();
+      }
+    });
 
     // Photo line arrows
     const reel = document.querySelector(".reel");
