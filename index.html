@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alicia &amp; Mairéad got married</title>
+<meta name="description" content="Alicia and Mairéad got married. Now they're throwing a dance party in Washington, DC on March 6, 2027.">
+<meta property="og:title" content="Alicia &amp; Mairéad got married. Now we party.">
+<meta property="og:description" content="Dance party at Toolbox DC, Saturday, March 6, 2027.">
+<meta property="og:image" content="photos/metro.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💐</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!--
+  HOW TO EDIT THIS PAGE
+  1. Dates and links: change the WEDDING settings near the bottom of this file.
+  2. Everything else: search this file for class="todo" and replace that text.
+  3. While draftMode is true, unfinished text is highlighted in yellow.
+     Set draftMode to false when you're done.
+  4. Photos live in the photos/ folder. To swap one, upload a new file with the same name.
+-->
+
+<style>
+  :root {
+    --paper: #FBF7EF;      /* the dresses */
+    --ink: #221E1F;        /* the polka dots */
+    --muted: #5C5456;
+    --red: #CF2A36;        /* the leather jacket */
+    --red-dark: #A81D2A;
+    --yellow: #F5B400;     /* Alicia's line */
+    --green: #1F9D55;      /* Mairéad's line */
+    --blush: #F7E4DC;
+    --night: #1B1720;      /* the light-tunnel selfie */
+    --gold: #C9A45C;       /* the brass bar arches */
+    --rb-red: #E4032E; --rb-orange: #F28C00; --rb-yellow: #F5B400;
+    --rb-green: #1F9D55; --rb-blue: #2463EB; --rb-violet: #7B3FBF;
+    --rainbow: linear-gradient(90deg, var(--rb-red), var(--rb-orange), var(--rb-yellow), var(--rb-green), var(--rb-blue), var(--rb-violet));
+    --white: #FFFFFF;
+    --display: "Bricolage Grotesque", "Arial Rounded MT Bold", "Helvetica Neue", Arial, sans-serif;
+    --body: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+    --measure: 62ch;
+    color-scheme: light;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 4.5rem; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; height: auto; display: block; }
+  a { color: inherit; text-decoration-thickness: 2px; text-underline-offset: 3px; text-decoration-color: var(--red); }
+  a:hover { color: var(--red-dark); }
+  :focus-visible { outline: 3px solid var(--red); outline-offset: 3px; border-radius: 4px; }
+
+  h1, h2, h3 { font-family: var(--display); line-height: 1.02; margin: 0; letter-spacing: -0.02em; }
+  h2 { font-size: clamp(2.1rem, 5.5vw, 3.4rem); font-weight: 800; margin-bottom: 1.25rem; }
+  h3 { font-size: 1.45rem; font-weight: 700; }
+  p { margin: 0 0 1rem; }
+
+  .wrap { width: min(1100px, 100% - 2.5rem); margin-inline: auto; }
+  section { padding: clamp(4rem, 9vw, 7rem) 0; }
+  .lede { font-size: 1.2rem; color: var(--muted); max-width: var(--measure); }
+
+  body.draft .todo { background: #FFF3A6; box-shadow: 0 0 0 2px #FFF3A6; border-radius: 3px; }
+
+  /* ---------- Nav ---------- */
+  .nav {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(251, 247, 239, 0.92);
+    backdrop-filter: blur(8px);
+  }
+  .nav::after { content: ""; position: absolute; left: 0; right: 0; bottom: -3px; height: 3px; background: var(--rainbow); }
+  .nav .wrap { display: flex; align-items: center; gap: 1.5rem; height: 3.75rem; }
+  .brand { font-family: var(--display); font-weight: 800; font-size: 1.25rem; text-decoration: none; white-space: nowrap; }
+  .nav ul { display: flex; gap: 1.25rem; list-style: none; margin: 0 0 0 auto; padding: 0; overflow-x: auto; scrollbar-width: none; }
+  .nav ul::-webkit-scrollbar { display: none; }
+  .nav li a { text-decoration: none; font-weight: 500; white-space: nowrap; font-size: 0.975rem; }
+  .nav li a.rsvp-link { color: var(--red-dark); font-weight: 600; }
+
+  /* ---------- Hero ---------- */
+  .hero { padding: clamp(2.5rem, 7vw, 5rem) 0 clamp(3rem, 7vw, 5rem); }
+  .hero-grid { display: grid; grid-template-columns: 1.25fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+  .hero h1 {
+    font-size: clamp(2.9rem, 8.2vw, 6.25rem);
+    font-weight: 800;
+    line-height: 0.93;
+    letter-spacing: -0.035em;
+  }
+  .hero { position: relative; overflow: hidden; }
+  .hero .wrap { position: relative; z-index: 1; }
+  .hero h1 .then {
+    display: inline-block; margin-top: 0.15em; padding-bottom: 0.08em;
+    color: var(--red);
+    background: linear-gradient(90deg, var(--rb-red), var(--rb-orange), #E0A200, var(--rb-green), var(--rb-blue), var(--rb-violet), var(--rb-red), var(--rb-orange), #E0A200, var(--rb-green), var(--rb-blue), var(--rb-violet), var(--rb-red));
+    background-size: 200% 100%;
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Sparkles (added by the script at the bottom) */
+  .sparkles { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
+  .sparkle { position: absolute; display: block; }
+  .sparkle svg { width: 100%; height: 100%; display: block; }
+  @media (prefers-reduced-motion: no-preference) {
+    .hero h1 .then { animation: shimmer 7s linear infinite; }
+    @keyframes shimmer { to { background-position: 200% 0; } }
+    .sparkle { animation: twinkle var(--dur, 2.8s) ease-in-out var(--delay, 0s) infinite; }
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.15; transform: scale(0.55) rotate(0deg); }
+      50% { opacity: 1; transform: scale(1) rotate(20deg); }
+    }
+  }
+
+  /* A bundle of six transit lines = a rainbow */
+  .rainbow-rule {
+    height: 42px;
+    background: linear-gradient(to bottom,
+      var(--rb-red) 0 6px, transparent 6px 7px,
+      var(--rb-orange) 7px 13px, transparent 13px 14px,
+      var(--rb-yellow) 14px 20px, transparent 20px 21px,
+      var(--rb-green) 21px 27px, transparent 27px 28px,
+      var(--rb-blue) 28px 34px, transparent 34px 35px,
+      var(--rb-violet) 35px 41px, transparent 41px);
+  }
+  .hero-meta { margin-top: 1.75rem; font-size: clamp(1.15rem, 2.4vw, 1.4rem); font-weight: 500; max-width: 30ch; }
+  .countdown { display: block; color: var(--muted); font-size: 1.05rem; margin-top: 0.35rem; }
+  .countdown:empty { display: none; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
+
+  .hero-photo { margin: 0; }
+  .hero-photo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 75%; border-radius: 24px; }
+  .hero-photo figcaption { margin-top: 0.75rem; color: var(--muted); font-size: 0.95rem; }
+
+  @media (max-width: 760px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-photo { max-width: 420px; }
+  }
+
+  /* The route: two lines merge at "Married" and ride on to "Party" */
+  .route { margin-top: clamp(2.5rem, 6vw, 4rem); width: 100%; max-width: 860px; height: auto; overflow: visible; display: block; }
+  .route text { font-family: var(--display); font-weight: 700; font-size: 22px; fill: var(--ink); }
+  .route text.small { font-family: var(--body); font-weight: 500; font-size: 16px; fill: var(--muted); }
+  .route .line { fill: none; stroke-width: 11; stroke-linecap: round; stroke-linejoin: round; }
+  .route .terminal { fill: var(--white); stroke-width: 5; }
+  .route .station { fill: var(--white); stroke: var(--ink); stroke-width: 5; }
+  .route .station.next { fill: var(--red); }
+  .route .spark { transform-box: fill-box; transform-origin: center; }
+  @media (prefers-reduced-motion: no-preference) {
+    .route .spark { animation: twinkle 2.6s ease-in-out infinite; }
+    .route .spark:nth-of-type(2) { animation-delay: .7s; }
+    .route .spark:nth-of-type(3) { animation-delay: 1.4s; }
+  }
+  @media (max-width: 600px) { .route text { font-size: 32px; } .route text.small { font-size: 24px; } }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .route .line { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 1.8s cubic-bezier(.6,.05,.3,1) .2s forwards; }
+    .route .arrive { opacity: 0; transform-box: fill-box; transform-origin: center; animation: arrive .45s ease-out forwards; }
+    .route .arrive.one { animation-delay: 0.95s; }
+    .route .arrive.two { animation-delay: 1.4s; }
+    .route .arrive.three { animation-delay: 1.85s; }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+    @keyframes arrive { from { opacity: 0; transform: scale(.6); } to { opacity: 1; transform: scale(1); } }
+  }
+
+  /* ---------- Buttons ---------- */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 0.85rem 1.6rem; border-radius: 999px;
+    font-family: var(--body); font-weight: 600; font-size: 1.05rem; text-decoration: none;
+    background: var(--red); color: var(--white); border: 3px solid var(--red);
+  }
+  .btn:hover { background: var(--red-dark); border-color: var(--red-dark); color: var(--white); }
+  .btn.ghost { background: transparent; color: var(--ink); border-color: var(--ink); }
+  .btn.ghost:hover { background: var(--ink); color: var(--white); }
+
+  /* ---------- Photos: the light tunnel ---------- */
+  .night {
+    position: relative; overflow: hidden;
+    background-color: var(--night);
+    background-image: repeating-linear-gradient(-14deg, rgba(255,255,255,0.07) 0 2px, transparent 2px 22px);
+    color: var(--white);
+  }
+  .night .wrap { position: relative; z-index: 1; }
+  .night .lede { color: #D6CFDC; }
+  .gallery { display: grid; grid-template-columns: repeat(6, 1fr); gap: clamp(1.25rem, 3vw, 2.25rem); margin-top: 2.75rem; }
+  .gallery figure { margin: 0; grid-column: span 2; }
+  .gallery figure:nth-child(4) { grid-column: 2 / span 2; }
+  .gallery figure:nth-child(5) { grid-column: 4 / span 2; }
+  .gallery img {
+    width: 100%; aspect-ratio: 3 / 4; object-fit: cover;
+    border-radius: 999px 999px 18px 18px;
+    border: 4px solid var(--gold);
+    padding: 5px; background: rgba(201, 164, 92, 0.18);
+  }
+  .gallery figcaption { margin-top: 0.8rem; font-weight: 500; color: #EDE7F2; text-align: center; }
+  @media (max-width: 700px) {
+    .gallery { grid-template-columns: 1fr 1fr; }
+    .gallery figure, .gallery figure:nth-child(4) { grid-column: auto; }
+    .gallery figure:nth-child(5) { grid-column: 1 / -1; width: 60%; justify-self: center; }
+  }
+
+  /* ---------- The line ---------- */
+  .stops { list-style: none; margin: 2.5rem 0 0; padding: 0; max-width: 720px; }
+  .stop { display: grid; grid-template-columns: 64px 1fr; }
+  .rail { position: relative; }
+  .rail::before, .rail::after { content: ""; position: absolute; top: 0; bottom: 0; width: 9px; }
+  .rail::before { left: 19px; background: var(--yellow); }
+  .rail::after  { left: 34px; background: var(--green); }
+  .stop:last-child .rail::before, .stop:last-child .rail::after { bottom: auto; height: 1.6rem; border-radius: 0 0 5px 5px; }
+  .stn {
+    position: absolute; z-index: 1; top: 0.35rem; left: 12px;
+    width: 38px; height: 26px; border-radius: 13px;
+    background: var(--white); border: 4px solid var(--ink);
+  }
+  .stop.done .stn { background: var(--ink); }
+  .stop.main .stn { background: var(--red); }
+  .stop-body { padding: 0 0 3.25rem 0.75rem; }
+  .when { font-weight: 600; margin: 0 0 0.3rem; color: var(--red-dark); }
+  .stop.done .when { color: var(--muted); }
+  .stop-body h3 { font-size: clamp(1.6rem, 3.5vw, 2.1rem); margin-bottom: 0.45rem; }
+  .stop.main h3 { font-size: clamp(2.2rem, 5.5vw, 3rem); }
+  .where { font-weight: 500; margin-bottom: 0.6rem; }
+  .stop-body p:not(.when):not(.where) { color: var(--muted); max-width: 52ch; }
+  .tag { display: inline-block; font-size: 0.85rem; font-weight: 600; padding: 0.15rem 0.6rem; border-radius: 999px; border: 2px solid var(--ink); margin-left: 0.4rem; vertical-align: 0.15em; font-family: var(--body); letter-spacing: 0; }
+  .map-link { font-weight: 600; }
+
+  .dress {
+    position: relative;
+    margin-top: 1.25rem; padding: 1.25rem 1.5rem; border: 4px solid var(--ink); border-radius: 20px; background: var(--white);
+    max-width: 34rem;
+  }
+  .dress p { margin: 0; }
+  .stop-body .dress p.rule { font-family: var(--display); font-weight: 800; font-size: clamp(1.7rem, 4.5vw, 2.3rem); line-height: 1.05; color: var(--ink); letter-spacing: -0.02em; }
+  .stop-body .dress p.rule-note { margin-top: 0.4rem; color: var(--muted); max-width: none; }
+
+  /* ---------- Getting here ---------- */
+  .band-blush { background: var(--blush); }
+  .grid-3 { display: grid; gap: 2.25rem 2.5rem; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); margin-top: 2.5rem; }
+  .block { border-top: 4px solid var(--ink); padding-top: 1rem; }
+  .block h3 { margin-bottom: 0.6rem; }
+  .block ul { margin: 0; padding-left: 1.1rem; }
+  .block li { margin-bottom: 0.5rem; }
+  .stay-title { font-size: clamp(1.7rem, 4vw, 2.2rem); margin: 3.5rem 0 1.25rem; }
+  .hotels { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+  .hotel { background: var(--white); border-radius: 20px; padding: 1.5rem 1.5rem 1.35rem; display: flex; flex-direction: column; }
+  .hotel .hood { font-weight: 600; color: var(--red-dark); margin: 0.3rem 0 0.6rem; }
+  .hotel p:not(.hood) { color: var(--muted); flex: 1; }
+
+  /* ---------- DC picks ---------- */
+  .picks { list-style: none; padding: 0; margin: 2.5rem 0 0; display: grid; gap: 0.25rem 3rem; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+  .picks li { display: grid; grid-template-columns: 20px 1fr; gap: 0.75rem; padding: 1rem 0; border-bottom: 1px solid rgba(34, 30, 31, 0.14); }
+  .picks li::before { content: ""; width: 16px; height: 16px; margin-top: 0.3rem; border-radius: 50%; border: 4px solid var(--ink); background: var(--white); }
+  .picks strong { font-family: var(--display); font-size: 1.2rem; font-weight: 700; display: block; }
+  .picks span { color: var(--muted); }
+
+  /* ---------- RSVP: polka dots ---------- */
+  .rsvp {
+    background-color: var(--paper);
+    background-image: radial-gradient(var(--ink) 5px, transparent 5.5px);
+    background-size: 34px 34px;
+  }
+  .rsvp { position: relative; }
+  .rsvp .wrap { position: relative; z-index: 1; }
+  .rsvp-card {
+    position: relative; overflow: hidden;
+    background: var(--paper); border: 4px solid var(--ink); border-radius: 28px;
+    padding: clamp(2.5rem, 6vw, 4.5rem) clamp(2rem, 6vw, 4rem) clamp(2rem, 6vw, 4rem); max-width: 720px;
+  }
+  .rsvp-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 12px; background: var(--rainbow); }
+  .rsvp h2 { font-size: clamp(2.6rem, 7vw, 4.5rem); }
+  .rsvp p { max-width: 50ch; font-size: 1.15rem; color: var(--muted); }
+  .rsvp .btn { margin-top: 0.75rem; }
+
+  /* ---------- Registry ---------- */
+  .registry .wrap { display: grid; gap: 1.5rem 3rem; grid-template-columns: 1fr auto; align-items: end; }
+  .registry p { max-width: 54ch; }
+  @media (max-width: 700px) { .registry .wrap { grid-template-columns: 1fr; } }
+
+  /* ---------- FAQ ---------- */
+  .faq-list { margin-top: 2rem; max-width: 760px; border-top: 1px solid rgba(34, 30, 31, 0.18); }
+  details { border-bottom: 1px solid rgba(34, 30, 31, 0.18); }
+  summary {
+    cursor: pointer; list-style: none; padding: 1.15rem 2.5rem 1.15rem 0; position: relative;
+    font-family: var(--display); font-weight: 700; font-size: 1.25rem;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after {
+    content: "+"; position: absolute; right: 0.25rem; top: 50%; transform: translateY(-50%);
+    font-size: 1.6rem; font-weight: 500; line-height: 1; color: var(--red-dark);
+  }
+  details[open] summary::after { content: "–"; }
+  details p { color: var(--muted); max-width: 60ch; padding-bottom: 0.5rem; }
+
+  /* ---------- Footer ---------- */
+  footer { padding: 3rem 0 3.5rem; }
+  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 1rem; }
+  footer p { margin: 0; color: var(--muted); }
+  footer .sign { font-family: var(--display); font-weight: 800; font-size: 1.4rem; color: var(--ink); }
+</style>
+</head>
+<body class="draft">
+
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="#top">Alicia &amp; Mairéad</a>
+    <ul>
+      <li><a href="#photos">Photos</a></li>
+      <li><a href="#party">The weekend</a></li>
+      <li><a href="#travel">Getting here</a></li>
+      <li><a href="#dc">Our DC</a></li>
+      <li><a href="#gifts">Gifts</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a class="rsvp-link" href="#rsvp">RSVP</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="top">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="sparkles" data-count="30" data-palette="rainbow" data-size="10-28" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <h1>Alicia &amp; Mairéad got married. <span class="then">Now we party.</span></h1>
+          <p class="hero-meta">
+            Come celebrate with us in DC, March&nbsp;5&nbsp;and&nbsp;6,&nbsp;2027.
+            <span class="countdown" id="countdown"></span>
+          </p>
+          <div class="hero-actions">
+            <a class="btn" href="#rsvp">RSVP</a>
+            <a class="btn ghost" href="#party">The weekend</a>
+          </div>
+        </div>
+        <figure class="hero-photo">
+          <img src="photos/metro.jpg" alt="Alicia and Mairéad on a Metro train, holding their bouquets" width="1200" height="1600">
+          <figcaption>On the Metro, on our way to get married.</figcaption>
+        </figure>
+      </div>
+
+      <svg class="route" viewBox="0 0 820 200" role="img" aria-labelledby="route-title">
+        <title id="route-title">Alicia's yellow line and Mairéad's green line merge at their first date at The LINE DC, then run together to Married, September 25, 2026, and on to the Party, March 6, 2027</title>
+        <path class="line" pathLength="1" stroke="var(--yellow)" d="M22 52 H170 C225 52 225 92 280 92 H800" />
+        <path class="line" pathLength="1" stroke="var(--green)"  d="M22 152 H170 C225 152 225 108 280 108 H800" />
+        <circle class="terminal" cx="22" cy="52" r="13" stroke="var(--yellow)" />
+        <circle class="terminal" cx="22" cy="152" r="13" stroke="var(--green)" />
+        <text x="48" y="34">Alicia</text>
+        <text x="48" y="186">Mairéad</text>
+        <g class="arrive one">
+          <rect class="station" x="284" y="74" width="72" height="52" rx="26" />
+          <text x="320" y="54" text-anchor="middle">First date</text>
+          <text class="small" x="320" y="152" text-anchor="middle">The LINE DC</text>
+        </g>
+        <g class="arrive two">
+          <rect class="station" x="474" y="74" width="72" height="52" rx="26" />
+          <text x="510" y="54" text-anchor="middle">Married</text>
+          <text class="small" x="510" y="152" text-anchor="middle" data-fill="marriedShort">Sept 25, 2026</text>
+        </g>
+        <g class="arrive three">
+          <rect class="station next" x="664" y="74" width="72" height="52" rx="26" />
+          <text x="700" y="54" text-anchor="middle">Party</text>
+          <text class="small" x="700" y="152" text-anchor="middle">March 6, 2027</text>
+          <path class="spark" fill="var(--rb-violet)" d="M756 58 c1 7 3 9 10 10 c-7 1 -9 3 -10 10 c-1 -7 -3 -9 -10 -10 c7 -1 9 -3 10 -10z"/>
+          <path class="spark" fill="var(--rb-blue)" d="M644 60 c.8 5 2 6.5 7 7.3 c-5 .8 -6.2 2 -7 7 c-.8 -5 -2 -6.2 -7 -7 c5 -.8 6.2 -2.3 7 -7.3z"/>
+          <path class="spark" fill="var(--rb-orange)" d="M774 118 c.8 5 2 6.5 7 7.3 c-5 .8 -6.2 2 -7 7 c-.8 -5 -2 -6.2 -7 -7 c5 -.8 6.2 -2.3 7 -7.3z"/>
+        </g>
+      </svg>
+    </div>
+  </header>
+
+  <div class="rainbow-rule" aria-hidden="true"></div>
+
+  <!-- PHOTOS -->
+  <section id="photos" class="night">
+    <div class="sparkles" data-count="40" data-palette="light" aria-hidden="true"></div>
+    <div class="wrap">
+      <h2>How it went</h2>
+      <p class="lede">We made it official at the courthouse with bouquets, red shoes, a ride on the Red Line, and a round at the bar. Here's the day.</p>
+      <div class="gallery">
+        <figure>
+          <img src="photos/signing.jpg" alt="Alicia and Mairéad on an orange bench, signing the marriage paperwork on a clipboard" width="1200" height="1600" loading="lazy">
+          <figcaption>Signing the paperwork</figcaption>
+        </figure>
+        <figure>
+          <img src="photos/courthouse-stop.jpg" alt="A selfie of Alicia and Mairéad with their bouquets, under a Metro sign pointing to the courthouses" width="1200" height="1599" loading="lazy">
+          <figcaption>Our stop: the courthouse exit</figcaption>
+        </figure>
+        <figure>
+          <img src="photos/after.jpg" alt="Alicia and Mairéad in cream dresses under a doorway covered in autumn leaves" width="1200" height="1600" loading="lazy">
+          <figcaption>Out celebrating afterward</figcaption>
+        </figure>
+        <figure>
+          <img src="photos/bar.jpg" alt="Alicia and Mairéad on bar stools under brass arches, holding their bouquets" width="1200" height="1600" loading="lazy">
+          <figcaption>A toast at the bar</figcaption>
+        </figure>
+        <figure>
+          <img src="photos/all-lit-up.jpg" alt="A selfie of Alicia and Mairéad against a wall of sparkling lights" width="1200" height="1600" loading="lazy">
+          <figcaption>All lit up</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <div class="rainbow-rule" aria-hidden="true"></div>
+
+  <!-- THE PARTY -->
+  <section id="party">
+    <div class="wrap">
+      <h2>The weekend</h2>
+      <p class="lede">We skipped the big ceremony. We're not skipping the party.</p>
+
+      <ol class="stops">
+        <li class="stop done">
+          <div class="rail"><span class="stn"></span></div>
+          <div class="stop-body">
+            <p class="when" data-fill="marriedLabel">September 25, 2026</p>
+            <h3>Married</h3>
+            <p>A quick trip to the DC courthouse. Done and official.</p>
+          </div>
+        </li>
+        <li class="stop">
+          <div class="rail"><span class="stn"></span></div>
+          <div class="stop-body">
+            <p class="when">Friday, March 5, 8 pm</p>
+            <h3>Welcome drinks</h3>
+            <p class="where">The LINE DC, 1770 Euclid Street NW, Adams Morgan</p>
+            <p>Join us for welcome drinks at 8 pm, back where it all started: our first date was here, in this century-old church turned hotel.</p>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=The+LINE+DC+1770+Euclid+St+NW+Washington+DC" target="_blank" rel="noopener">Open in Maps</a>
+          </div>
+        </li>
+        <li class="stop main">
+          <div class="rail"><span class="stn"></span></div>
+          <div class="stop-body">
+            <p class="when">Saturday, March 6, 6 pm until late</p>
+            <h3>The party</h3>
+            <p class="where">Toolbox DC, 1627 Connecticut Avenue NW, Dupont Circle</p>
+            <p>Pizza from Timber Pizza, drinks, a DJ, and a dance floor we fully expect you to use.</p>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Toolbox+1627+Connecticut+Ave+NW+Washington+DC+20009" target="_blank" rel="noopener">Open in Maps</a>
+            <div class="dress">
+              <p class="rule">Dress code: outdress the brides.</p>
+              <p class="rule-note">Cocktail attire at minimum. We got married in red leather and polka dots, so the bar is set. Go big.</p>
+            </div>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- GETTING HERE -->
+  <section id="travel" class="band-blush">
+    <div class="wrap">
+      <h2>Getting here</h2>
+      <p class="lede">Coming from out of town? DC is easy to reach, and everything this weekend is in Dupont Circle or Adams Morgan, a short walk or ride apart.</p>
+
+      <div class="grid-3">
+        <div class="block">
+          <h3>Flying in</h3>
+          <ul>
+            <li><strong>Reagan National (DCA)</strong> is the closest airport, with a Metro stop right at the terminal.</li>
+            <li><strong>Dulles (IAD)</strong> connects to downtown on the Silver Line.</li>
+            <li><strong>Baltimore (BWI)</strong> often has cheaper fares. Take the MARC or Amtrak train to Union Station.</li>
+          </ul>
+        </div>
+        <div class="block">
+          <h3>Train or bus</h3>
+          <p>Amtrak and most intercity buses arrive at Union Station. From there, the Red Line runs straight to Dupont Circle.</p>
+        </div>
+        <div class="block">
+          <h3>Getting around</h3>
+          <p>For Saturday, take the Red Line to Dupont Circle, like we did on our wedding day. Toolbox is about a block from the station. For Friday, The LINE is a walk from the Woodley Park Metro. Parking in both neighborhoods is hard to find.</p>
+        </div>
+      </div>
+
+      <h3 class="stay-title">Where to stay</h3>
+      <div class="hotels">
+        <div class="hotel">
+          <h3>The LINE DC</h3>
+          <p class="hood">Adams Morgan</p>
+          <p>Where we had our first date, in a converted century-old church. It's also where Friday's welcome drinks are, so your bed is an elevator ride away.</p>
+          <a class="map-link" href="https://thelinehotel.com/dc/" target="_blank" rel="noopener">Visit the site</a>
+        </div>
+        <div class="hotel">
+          <h3>Lyle</h3>
+          <p class="hood">Dupont Circle</p>
+          <p>A calm, stylish hotel in an Art Deco building, a few blocks from Dupont Circle and the party.</p>
+          <a class="map-link" href="https://www.lyledc.com/" target="_blank" rel="noopener">Visit the site</a>
+        </div>
+        <div class="hotel">
+          <h3>Washington Hilton</h3>
+          <p class="hood">Between Dupont Circle and Adams Morgan</p>
+          <p>A big, dependable hotel on Connecticut Avenue, walkable to everything this weekend.</p>
+          <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Washington+Hilton+1919+Connecticut+Ave+NW+Washington+DC" target="_blank" rel="noopener">Find it on the map</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR DC -->
+  <section id="dc">
+    <div class="wrap">
+      <h2>Our DC</h2>
+      <p class="lede">Staying for the weekend? Here are a few places we love.</p>
+      <!-- Starter list: swap in your own favorites -->
+      <ul class="picks">
+        <li><div><strong>Dupont Circle</strong><span>The party's neighborhood. Coffee, bookstores, and the Sunday farmers market for the morning after.</span></div></li>
+        <li><div><strong>Adams Morgan</strong><span>Bars, restaurants, and murals up and down 18th Street, right around the corner from The LINE.</span></div></li>
+        <li><div><strong>Museums on the Mall</strong><span>Our favorites are the National Gallery of Art and the Smithsonian's Natural History Museum. Both are free.</span></div></li>
+        <li><div><strong>The National Mall at sunset</strong><span>Walk from the Capitol to the Lincoln Memorial as the lights come on.</span></div></li>
+        <li><div><strong>Eastern Market</strong><span>Weekend market in Capitol Hill for food, flowers, and browsing.</span></div></li>
+        <li><div><strong>Rock Creek Park</strong><span>A forest in the middle of the city, for a quiet walk after a late night.</span></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- RSVP -->
+  <section id="rsvp" class="rsvp">
+    <div class="sparkles" data-count="14" data-palette="rainbow" data-size="16-34" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="rsvp-card">
+        <h2>Will you be there?</h2>
+        <p>Please RSVP by <span data-fill="rsvpBy">October 31, 2026</span> so we can plan pizza, drinks, and dance floor space. You can tell us about dietary needs on the form.</p>
+        <a class="btn" data-href="rsvpUrl" href="#">RSVP now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GIFTS -->
+  <section id="gifts" class="registry">
+    <div class="wrap">
+      <div>
+        <h2>Gifts</h2>
+        <p>We don't have a registry. Celebrating with you is plenty. If you'd like to give something anyway, you can send it our way on Venmo at <span class="todo" data-fill="venmoHandle">@venmo-handle</span>.</p>
+      </div>
+      <a class="btn ghost" data-href="venmoUrl" href="#">Open Venmo</a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="band-blush">
+    <div class="wrap">
+      <h2>Questions</h2>
+      <div class="faq-list">
+        <details>
+          <summary>Wait, you're already married?</summary>
+          <p>Yes! We got married at the DC courthouse on <span data-fill="marriedLabel">September 25, 2026</span>. This is the party we've been wanting to throw ever since.</p>
+        </details>
+        <details>
+          <summary>What does "outdress the brides" mean?</summary>
+          <p>It means cocktail attire at the very least, and more is better. Sequins, a sharp suit, bold color, a statement jacket: this is the night for it. Just wear shoes you can dance in.</p>
+        </details>
+        <details>
+          <summary>Will there be food at the party?</summary>
+          <p>Yes. Timber Pizza is catering the party, so come hungry. Let us know about any dietary needs on the RSVP form.</p>
+        </details>
+        <details>
+          <summary>Can I bring a plus-one?</summary>
+          <p>If your invitation includes a guest, yes. Your RSVP form will show how many spots we've saved for you.</p>
+        </details>
+        <details>
+          <summary>Are kids welcome?</summary>
+          <p>Absolutely. Everyone is welcome, kids included.</p>
+        </details>
+        <details>
+          <summary>What's the weather like in early March?</summary>
+          <p>Usually chilly, and it can swing from cold to mild. Bring a coat you're happy to check at the door.</p>
+        </details>
+        <details>
+          <summary>Is the venue accessible?</summary>
+          <p>There are two steps up to the main door at Toolbox. If that's a challenge for you or someone in your group, email us ahead of time and we'll make sure you're taken care of.</p>
+        </details>
+        <details>
+          <summary>Who do I ask about anything else?</summary>
+          <p>Email Alicia at <a href="mailto:alicia.cooperman@gmail.com">alicia.cooperman@gmail.com</a> or Mairéad at <a href="mailto:mflynn87@gmail.com">mflynn87@gmail.com</a>. We're happy to help.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div class="rainbow-rule" aria-hidden="true"></div>
+<footer>
+  <div class="wrap">
+    <p class="sign">See you on the dance floor.</p>
+    <p>Alicia Dailey Cooperman &amp; Mairéad Frances Flynn<br><a href="mailto:alicia.cooperman@gmail.com">alicia.cooperman@gmail.com</a> · <a href="mailto:mflynn87@gmail.com">mflynn87@gmail.com</a></p>
+  </div>
+</footer>
+
+<script>
+  /* ===========================================
+     EDIT THESE: they update everywhere on the page
+     =========================================== */
+  const WEDDING = {
+    marriedLabel: "September 25, 2026",
+    marriedShort: "Sept 25, 2026",           // short version for the map
+    partyDate: "2027-03-06T18:00:00-05:00",  // party start time, used for the countdown
+    rsvpBy: "October 31, 2026",              // your RSVP deadline
+    rsvpUrl: "https://forms.gle/kgHnWxy1BjAB1DV88",  // Google Form
+    venmoHandle: "@venmo-handle",            // e.g. "@Alicia-Cooperman"
+    venmoUrl: "#",                           // e.g. "https://venmo.com/u/Alicia-Cooperman"
+    draftMode: true                          // set to false to hide the yellow highlights
+  };
+
+  (function () {
+    const values = WEDDING;
+
+    document.querySelectorAll("[data-fill]").forEach(el => {
+      const v = values[el.dataset.fill];
+      if (v) el.textContent = v;
+    });
+    document.querySelectorAll("[data-href]").forEach(el => {
+      const v = values[el.dataset.href];
+      if (v) el.setAttribute("href", v);
+      if (/^https?:/.test(v)) { el.target = "_blank"; el.rel = "noopener"; }
+    });
+    if (!WEDDING.draftMode) document.body.classList.remove("draft");
+
+    // Sparkles
+    const palettes = {
+      rainbow: ["#E4032E", "#F28C00", "#F5B400", "#1F9D55", "#2463EB", "#7B3FBF", "#C9A45C"],
+      light: ["#FFFFFF", "#FFFFFF", "#F5E6B8", "#FFD6E7", "#D9E6FF"]
+    };
+    const star = '<svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 0C13 8 16 11 24 12C16 13 13 16 12 24C11 16 8 13 0 12C8 11 11 8 12 0Z"/></svg>';
+    document.querySelectorAll(".sparkles").forEach(field => {
+      const n = parseInt(field.dataset.count || "16", 10);
+      const colors = palettes[field.dataset.palette] || palettes.rainbow;
+      const [minS, maxS] = (field.dataset.size || "8-24").split("-").map(Number);
+      const narrow = window.innerWidth < 700;
+      const count = narrow ? Math.ceil(n * 0.55) : n;
+      for (let i = 0; i < count; i++) {
+        const el = document.createElement("span");
+        el.className = "sparkle";
+        const size = minS + Math.random() * (maxS - minS);
+        el.style.width = el.style.height = size + "px";
+        el.style.left = (Math.random() * 97) + "%";
+        el.style.top = (Math.random() * 95) + "%";
+        el.style.color = colors[Math.floor(Math.random() * colors.length)];
+        el.style.setProperty("--dur", (2 + Math.random() * 2.5).toFixed(2) + "s");
+        el.style.setProperty("--delay", (-Math.random() * 4).toFixed(2) + "s");
+        el.innerHTML = star;
+        field.appendChild(el);
+      }
+    });
+
+    if (WEDDING.partyDate) {
+      const days = Math.ceil((new Date(WEDDING.partyDate) - new Date()) / 86400000);
+      const cd = document.getElementById("countdown");
+      if (days > 1) cd.textContent = days + " days until the party";
+      else if (days === 1) cd.textContent = "The party is tomorrow!";
+      else if (days === 0) cd.textContent = "The party is tonight!";
+    }
+  })();
+</script>
+</body>
+</html>
