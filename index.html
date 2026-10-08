@@ -304,6 +304,11 @@
   .stop-body p:not(.when):not(.where) { color: var(--muted); max-width: 52ch; }
   .tag { display: inline-block; font-size: 0.85rem; font-weight: 600; padding: 0.15rem 0.6rem; border-radius: 999px; border: 2px solid var(--ink); margin-left: 0.4rem; vertical-align: 0.15em; font-family: var(--body); letter-spacing: 0; }
   .map-link { font-weight: 600; }
+  .entrance-map { margin: 0 0 1rem; max-width: 34rem; }
+  .entrance-map img { width: 100%; border-radius: 14px; border: 3px solid var(--ink); }
+  .entrance-map figcaption { margin-top: 0.5rem; font-size: 0.95rem; color: var(--muted); }
+  .heads-up { margin: 0.4rem 0 0.9rem; padding: 0.85rem 1.1rem; border-left: 6px solid var(--red); background: var(--white); border-radius: 0 12px 12px 0; max-width: 34rem; }
+  .stop-body .heads-up p:not(.when):not(.where) { margin: 0; color: var(--ink); max-width: none; }
 
   .dress {
     position: relative;
@@ -638,9 +643,18 @@
           <div class="stop-body">
             <p class="when">Saturday, March 6, 6 pm until late</p>
             <h3>The party</h3>
-            <p class="where">Toolbox DC, 1627 Connecticut Avenue NW, Dupont Circle</p>
+            <p class="where"><a href="https://thetoolboxdc.com/location/" target="_blank" rel="noopener">Toolbox DC</a>, 1627 Connecticut Avenue NW, Dupont Circle</p>
+            <div class="heads-up">
+              <p><strong>Heads up: Toolbox is in a back alley and is NOT visible from Connecticut Avenue.</strong> Enter through the alley next to 1632 19th St. NW, Washington, DC.</p>
+            </div>
+            <figure class="entrance-map">
+              <a href="https://www.google.com/maps/search/?api=1&amp;query=1632+19th+St+NW+Washington+DC+20009" target="_blank" rel="noopener">
+                <img src="photos/toolbox-map.jpg" alt="Map showing Toolbox in the alley behind 1630 19th St. NW, between Connecticut Avenue and 19th Street, south of R Street" width="1200" height="693" loading="lazy">
+              </a>
+              <figcaption>Toolbox is the red pin, tucked in the alley behind 1630 19th St. NW. Tap the map for directions.</figcaption>
+            </figure>
             <p>Pizza from <a href="https://www.timberpizza.com/" target="_blank" rel="noopener">Timber Pizza</a>, wedding cake and desserts from <a href="https://www.instagram.com/greathousebakes/" target="_blank" rel="noopener">Greathouse Bakes</a> (as seen on Season 4 of <em>The Great American Baking Show</em>), drinks, a DJ, and a dance floor we fully expect you to use.</p>
-            <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Toolbox+1627+Connecticut+Ave+NW+Washington+DC+20009" target="_blank" rel="noopener">Open in Maps</a>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=1632+19th+St+NW+Washington+DC+20009" target="_blank" rel="noopener">Map to the alley entrance</a>
             <div class="dress">
               <p class="rule">Dress code: outdress the brides.</p>
               <p class="rule-note">Cocktail attire at minimum. We got married in red leather and polka dots, so the bar is set. Go big.</p>
@@ -672,7 +686,7 @@
         </div>
         <div class="block">
           <h3>Getting around</h3>
-          <p>For Saturday, take the Red Line to Dupont Circle, like we did on our wedding day. Toolbox is about a block from the station. For Friday, we'll share the exact spot soon. It will be in Adams Morgan, a walk from Dupont Circle or Woodley Park Metro. Parking in both neighborhoods is hard to find.</p>
+          <p>For Saturday, take the Red Line to Dupont Circle, like we did on our wedding day. Toolbox is about a block from the station, tucked in the alley behind 1630 19th St. NW. For Friday, we'll share the exact spot soon. It will be in Adams Morgan, a walk from Dupont Circle or Woodley Park Metro. Parking in both neighborhoods is hard to find.</p>
         </div>
       </div>
 
