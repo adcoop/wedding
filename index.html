@@ -355,6 +355,7 @@
   /* ---------- Registry ---------- */
   .registry .wrap { display: grid; gap: 1.5rem 3rem; grid-template-columns: 1fr auto; align-items: end; }
   .registry p { max-width: 54ch; }
+  .venmo-btns { display: flex; flex-wrap: wrap; gap: 0.75rem; }
   @media (max-width: 700px) { .registry .wrap { grid-template-columns: 1fr; } }
 
   /* ---------- FAQ ---------- */
@@ -733,9 +734,12 @@
     <div class="wrap">
       <div>
         <h2>Gifts</h2>
-        <p>We don't have a registry. Celebrating with you is plenty. If you'd like to give something anyway, please contribute to our honeymoon or IVF journeys on Venmo at <span class="todo" data-fill="venmoHandle">@venmo-handle</span>.</p>
+        <p>We don't have a registry. Celebrating with you is plenty. If you'd like to give something anyway, please contribute to our honeymoon or IVF journeys on Venmo at <a href="https://venmo.com/u/Alicia-Cooperman" target="_blank" rel="noopener">@Alicia-Cooperman</a> or <a href="https://venmo.com/u/Mairead-Flynn" target="_blank" rel="noopener">@Mairead-Flynn</a>.</p>
       </div>
-      <a class="btn ghost" data-href="venmoUrl" href="#">Open Venmo</a>
+      <div class="venmo-btns">
+        <a class="btn ghost" href="https://venmo.com/u/Alicia-Cooperman" target="_blank" rel="noopener">Venmo Alicia</a>
+        <a class="btn ghost" href="https://venmo.com/u/Mairead-Flynn" target="_blank" rel="noopener">Venmo Mairéad</a>
+      </div>
     </div>
   </section>
 
@@ -800,9 +804,7 @@
     partyDate: "2027-03-06T18:00:00-05:00",  // party start time, used for the countdown
     rsvpBy: "October 31, 2026",              // your RSVP deadline
     rsvpUrl: "https://forms.gle/kgHnWxy1BjAB1DV88",  // Google Form
-    venmoHandle: "@venmo-handle",            // e.g. "@Alicia-Cooperman"
-    venmoUrl: "#",                           // e.g. "https://venmo.com/u/Alicia-Cooperman"
-    draftMode: true                          // set to false to hide the yellow highlights
+    draftMode: false                         // set to false to hide the yellow highlights
   };
 
   (function () {
