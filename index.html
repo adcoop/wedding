@@ -304,6 +304,22 @@
   .stop-body p:not(.when):not(.where) { color: var(--muted); max-width: 52ch; }
   .tag { display: inline-block; font-size: 0.85rem; font-weight: 600; padding: 0.15rem 0.6rem; border-radius: 999px; border: 2px solid var(--ink); margin-left: 0.4rem; vertical-align: 0.15em; font-family: var(--body); letter-spacing: 0; }
   .map-link { font-weight: 600; }
+  .married-note {
+    display: flex; gap: 1.1rem; align-items: flex-start; max-width: 720px;
+    margin: 0.5rem 0 0.5rem; padding: 1.25rem 1.5rem; background: var(--white);
+    border: 4px solid var(--ink); border-radius: 20px;
+  }
+  .married-note p { margin: 0; color: var(--muted); }
+  .married-note .married-title { font-family: var(--display); font-weight: 800; font-size: clamp(1.5rem, 4vw, 2rem); color: var(--ink); line-height: 1.1; margin-bottom: 0.35rem; letter-spacing: -0.02em; }
+  .married-note strong { color: var(--ink); }
+  .check-stn {
+    flex-shrink: 0; width: 52px; height: 36px; border-radius: 18px; margin-top: 0.15rem;
+    background: var(--ink); color: var(--white); display: grid; place-items: center;
+  }
+  .check-stn svg { width: 22px; height: 22px; }
+  .where-label { font-family: var(--display); font-weight: 700; font-size: 1.25rem; margin: 1.75rem 0 0.25rem; color: var(--ink); }
+  .stop-body p.where-label:not(.when):not(.where) { color: var(--ink); }
+  .stay-intro { max-width: 62ch; color: var(--muted); margin: -0.5rem 0 1.5rem; font-size: 1.1rem; }
   .entrance-map { margin: 0 0 1rem; max-width: 34rem; }
   .entrance-map img { width: 100%; border-radius: 14px; border: 3px solid var(--ink); }
   .entrance-map figcaption { margin-top: 0.5rem; font-size: 0.95rem; color: var(--muted); }
@@ -615,24 +631,25 @@
   <section id="party">
     <div class="wrap">
       <h2>The weekend</h2>
-      <p class="lede">We skipped the big ceremony. We're not skipping the party.</p>
+      <div class="married-note">
+        <span class="check-stn" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <div>
+          <p class="married-title">We're already married!</p>
+          <p>We made it official at the DC courthouse on <span data-fill="marriedLabel">September 25, 2026</span>. <strong>There's no ceremony this weekend.</strong> It's all celebrating, and here's the plan.</p>
+        </div>
+      </div>
 
       <ol class="stops">
-        <li class="stop done">
-          <div class="rail"><span class="stn"></span></div>
-          <div class="stop-body">
-            <p class="when" data-fill="marriedLabel">September 25, 2026</p>
-            <h3>Married</h3>
-            <p>A quick trip to the DC courthouse. Done and official.</p>
-          </div>
-        </li>
         <li class="stop">
           <div class="rail"><span class="stn"></span></div>
           <div class="stop-body">
             <p class="when">Friday, March 5, 8 pm</p>
             <h3>Welcome drinks</h3>
-            <p class="where">TBD, Adams Morgan</p>
-            <p>Join us for welcome drinks from 8 pm to 10 pm </p>
+            <p>Join us for welcome drinks from 8 pm to 10 pm. All adults are invited!</p>
+            <div class="heads-up">
+              <p><strong>Please note: the bar is 21+.</strong> We'll share the exact spot soon.</p>
+            </div>
+            <p class="where">Bar TBD, Adams Morgan</p>
             <!-- Maps link hidden until the venue is set. To restore it, remove the comment marks and update the address:
             <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=VENUE+ADDRESS+Washington+DC" target="_blank" rel="noopener">Open in Maps</a>
             -->
@@ -643,6 +660,13 @@
           <div class="stop-body">
             <p class="when">Saturday, March 6, 6 pm until late</p>
             <h3>The party</h3>
+            <p>Dinner, dessert, drinks, and dancing! There will be pizza from <a href="https://www.timberpizza.com/" target="_blank" rel="noopener">Timber Pizza</a>, wedding cake and desserts from <a href="https://www.instagram.com/greathousebakes/" target="_blank" rel="noopener">Greathouse Bakes</a> (as seen on Season 4 of <em>The Great American Baking Show</em>), an <strong>open bar</strong> with signature cocktails, and a DJ with fabulous tunes.</p>
+            <p>We'll kick off the dancing with <strong>our first dance</strong>, and after that, the dance floor is yours. We fully expect you to use it.</p>
+            <div class="dress">
+              <p class="rule">Dress code: outdress the brides.</p>
+              <p class="rule-note">Cocktail attire at minimum, but pizzazz is encouraged. Sequins, a sharp suit, bold color, a statement jacket: this is the night for it. We got married in red leather and polka dots, so the bar is set. Just wear shoes you can dance in.</p>
+            </div>
+            <p class="where-label">Where to find us</p>
             <p class="where"><a href="https://thetoolboxdc.com/location/" target="_blank" rel="noopener">Toolbox DC</a>, Dupont Circle</p>
             <div class="heads-up">
               <p><strong>Heads up: Toolbox is in a back alley and is NOT visible from Connecticut Avenue.</strong> Enter through the alley next to 1632 19th St. NW, Washington, DC.</p>
@@ -653,12 +677,7 @@
               </a>
               <figcaption>Toolbox is the red pin, tucked in the alley behind 1630 19th St. NW. Tap the map for directions.</figcaption>
             </figure>
-            <p>Pizza from <a href="https://www.timberpizza.com/" target="_blank" rel="noopener">Timber Pizza</a>, wedding cake and desserts from <a href="https://www.instagram.com/greathousebakes/" target="_blank" rel="noopener">Greathouse Bakes</a> (as seen on Season 4 of <em>The Great American Baking Show</em>), signature cocktails, a DJ with fabulous tunes, and a dance floor we fully expect you to use.</p>
             <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=1632+19th+St+NW+Washington+DC+20009" target="_blank" rel="noopener">Map to the alley entrance</a>
-            <div class="dress">
-              <p class="rule">Dress code: outdress the brides.</p>
-              <p class="rule-note">Cocktail attire at minimum. We got married in red leather and polka dots, so the bar is set. Go big.</p>
-            </div>
           </div>
         </li>
       </ol>
@@ -692,11 +711,12 @@
       </div>
 
       <h3 class="stay-title">Where to stay</h3>
+      <p class="stay-intro">We're so excited to have you all in our city. We are not reserving room blocks, but here are some of our favorite places! We recommend booking sooner rather than later to make sure you're close to the action.</p>
       <div class="hotels">
         <div class="hotel">
           <h3>The LINE DC</h3>
           <p class="hood">Adams Morgan</p>
-          <p>Where we had our first date, in a converted century-old church. </p>
+          <p>Where we had our first date, in a converted century-old church. It's in the heart of Adams Morgan, near Friday's welcome drinks, and about a 20-minute walk or a quick cab ride to Saturday's party.</p>
           <a class="map-link" href="https://thelinehotel.com/dc/" target="_blank" rel="noopener">Visit the site</a>
         </div>
         <div class="hotel">
@@ -715,7 +735,7 @@
           <h3>Washington Hilton</h3>
           <p class="hood">Between Dupont Circle and Adams Morgan</p>
           <p>A big, dependable hotel on Connecticut Avenue, walkable to everything this weekend.</p>
-          <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Washington+Hilton+1919+Connecticut+Ave+NW+Washington+DC" target="_blank" rel="noopener">Find it on the map</a>
+          <a class="map-link" href="https://www.hilton.com/en/hotels/dcawhhh-washington-hilton/" target="_blank" rel="noopener">Visit the site</a>
         </div>
       </div>
     </div>
@@ -744,7 +764,7 @@
     <div class="wrap">
       <div class="rsvp-card">
         <h2>Will you be there?</h2>
-        <p>Please RSVP by <span data-fill="rsvpBy">November 1, 2026</span> so we can plan pizza, drinks, and dance floor space. You can tell us about dietary needs on the form.</p>
+        <p>Please RSVP by <span data-fill="rsvpBy">November 1, 2026</span> so we can plan pizza, drinks, and dance floor space. You can tell us about dietary needs on the form. If you need more time to decide, we totally understand. Just let us know!</p>
         <a class="btn" data-href="rsvpUrl" href="#">RSVP now</a>
       </div>
     </div>
@@ -774,10 +794,6 @@
           <p>Yes! We got married at the DC courthouse on <span data-fill="marriedLabel">September 25, 2026</span>. This is the party we've been wanting to throw ever since.</p>
         </details>
         <details>
-          <summary>What does "outdress the brides" mean?</summary>
-          <p>It means cocktail attire at the very least, and more is better. Sequins, a sharp suit, bold color, a statement jacket: this is the night for it. Just wear shoes you can dance in.</p>
-        </details>
-        <details>
           <summary>Will there be food at the party?</summary>
           <p>Yes. <a href="https://www.timberpizza.com/" target="_blank" rel="noopener">Timber Pizza</a> is catering the party, and <a href="https://www.instagram.com/greathousebakes/" target="_blank" rel="noopener">Greathouse Bakes</a> is making our wedding cake and desserts, so come hungry. Let us know about any dietary needs on the RSVP form.</p>
         </details>
@@ -787,7 +803,7 @@
         </details>
         <details>
           <summary>Are kids welcome?</summary>
-          <p>Absolutely. Everyone is welcome, kids included.</p>
+          <p>Absolutely. Everyone is welcome, kids included. Parents are responsible for arranging their own childcare. Just a heads-up that Friday's welcome drinks are at a 21+ bar.</p>
         </details>
         <details>
           <summary>What's the weather like in early March?</summary>
